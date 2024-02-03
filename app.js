@@ -17,7 +17,6 @@ next.onclick = function () {
 //event prev click
 prev.onclick = function () {
   itemActive = (itemActive + countItem - 1) % countItem;
-  console.log(itemActive);
   showSlider();
 };
 
