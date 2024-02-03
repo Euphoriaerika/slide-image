@@ -6,6 +6,7 @@ let thumbnail = document.querySelectorAll(".thumbnail .item");
 //config param
 let countItem = items.length;
 let itemActive = 0;
+const timeInterval = 8;
 
 //event next click
 next.onclick = function () {
@@ -30,9 +31,9 @@ thumbnail.forEach((thumbnail, index) => {
 
 // auto run slider
 
-let refreshInterval = setInterval(() =>{
-    next.click();
-}, 3000);
+let refreshInterval = setInterval(() => {
+  next.click();
+}, timeInterval * 1000);
 
 function showSlider() {
   //remove item active old
@@ -49,5 +50,5 @@ function showSlider() {
   clearInterval(refreshInterval);
   refreshInterval = setInterval(() => {
     next.click();
-  }, 3000);
+  }, timeInterval * 1000);
 }
