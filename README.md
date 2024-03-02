@@ -20,4 +20,4 @@ I got the inspiration for this project from a tutorial on a YouTube channel. You
 
 ## Contact
 
-For any questions or suggestions regarding this project, feel free to contact me via [LinkedIn](https://www.linkedin.com/in/your-linkedin-profile/).
+For any questions or suggestions regarding this project, feel free to contact me via [LinkedIn](https://www.linkedin.com/in/bohdan-rudenko-b5726928a/).
