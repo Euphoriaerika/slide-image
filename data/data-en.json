@@ -1,21 +1,27 @@
 [
   {
     "imageSrc": "./images/img-1.jpg",
-    "category": "html & css",
-    "title": "Slider",
-    "description": "A dynamic image slider website created using HTML, CSS, and JavaScript, offering seamless navigation through fullscreen images or manual control via image cards. The straightforward setup facilitates easy customization with your own images."
-  },
-  {
-    "imageSrc": "./images/img-2.jpg",
-    "category": "React",
-    "title": "Eatpy",
-    "description": "This food planning website provides personalized meal recommendations and dietary guidance, helping users make healthier choices based on their preferences and health goals."
+    "category": "Platform",
+    "title": "Moonscars",
+    "description": "Refine your combat skills and master new abilities to navigate through the nonlinear world of Moonscars. Confront the relentless darkness that seeks to annihilate you. In Moonscars, each death is a learned lesson, and with every trial overcome, new truths will be unveiled."
   },
   {
     "imageSrc": "./images/img-3.jpg",
-    "category": "Figma",
-    "title": "Flexgym",
-    "description": "The gym website is a one-stop destination for fitness, offering tailored workout plans, nutrition advice, and a supportive community for individuals striving to achieve their health goals."
+    "category": "Survival horror",
+    "title": "S.T.A.L.K.E.R. 2",
+    "description": "Explore the vast Chornobyl Exclusion Zone, teeming with dangerous foes, deadly anomalies, and potent artifacts. Unfold your own epic tale as you journey to the Heart of Chornobyl. Choose wisely, for your decisions will shape your fate in the end."
+  },
+  {
+    "imageSrc": "./images/img-4.jpg",
+    "category": "Adventure",
+    "title": "Sherlock Holmes",
+    "description": "Embark on a chilling Lovecraftian journey with revamped graphics and gameplay. Step into the shoes of Sherlock Holmes to delve into eerie disappearances across Europe and the US."
+  },
+  {
+    "imageSrc": "./images/img-2.jpg",
+    "category": "Roguelike",
+    "title": "Bosorka",
+    "description": "Bosorka is an exciting action roguelike where a young witch saves the world from insidious and cruel demons. Combine runes, master a variety of brooms, and try all possible and impossible spells until you gain enough power to fight evil."
   }
 ]
   
