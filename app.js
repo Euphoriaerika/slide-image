@@ -1,26 +1,39 @@
-document.addEventListener("DOMContentLoaded", function () {
-  let currentLanguage = "en"; // За замовчуванням англійська мова
-  let activeSlideIndex = 0; // Індекс активного слайда
+document.addEventListener("DOMContentLoaded", () => {
+  let currentLanguage = "en"; // English language by default
+  let activeSlideIndex = 0; // Index of the active slide
+  const swapInterval = 16000; // 10 seconds
+  var refreshInterval = setInterval(() => {
+    next.click();
+  }, swapInterval);
 
-  // Функція зміни мови
-  function downloadData(language) {
+  // Function to update the interval
+  const updateInterval = () => {
+    clearInterval(refreshInterval);
+    refreshInterval = setInterval(() => {
+      next.click();
+    }, swapInterval);
+  };
+
+  // Function to change language
+  const downloadData = (language) => {
     fetch(`./data/data-${language}.json`)
       .then((response) => response.json())
       .then((data) => {
         initializeSlider(data);
       })
       .catch((error) => console.error("Error loading data:", error));
-  }
+  };
 
-  // Функція ініціалізації слайдера
-  function initializeSlider(data) {
+  // Function to initialize the slider
+  const initializeSlider = (data) => {
     const sliderList = document.querySelector(".slider .list");
     const thumbnailList = document.querySelector(".slider .thumbnail");
 
-    // Очищення списків слайдів та мініатюр
+    // Clear slide and thumbnail lists
     sliderList.innerHTML = "";
     thumbnailList.innerHTML = "";
 
+    // Add slides and thumbnails
     data.forEach((item, index) => {
       const slideItem = document.createElement("div");
       slideItem.classList.add("item");
@@ -45,22 +58,25 @@ document.addEventListener("DOMContentLoaded", function () {
       thumbnailList.appendChild(thumbnailItem);
     });
 
-    // Оновлення подій кліків на наступний та попередній слайди
+    // Update click events for next and previous slides
     const items = document.querySelectorAll(".slider .list .item");
     const next = document.getElementById("next");
     const prev = document.getElementById("prev");
     const thumbnails = document.querySelectorAll(".thumbnail .item");
 
-    next.onclick = function () {
+    // When the user clicks on the next button slider move to the next slide
+    next.onclick = () => {
       activeSlideIndex = (activeSlideIndex + 1) % data.length;
       showSlider();
     };
 
-    prev.onclick = function () {
+    // When the user clicks on the previous button slider move to the previous slide
+    prev.onclick = () => {
       activeSlideIndex = (activeSlideIndex + data.length - 1) % data.length;
       showSlider();
     };
 
+    // When the user click on the thumbnail element, move to the corresponding slide
     thumbnails.forEach((thumbnail, index) => {
       thumbnail.addEventListener("click", () => {
         activeSlideIndex = index;
@@ -68,13 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    let refreshInterval = setInterval(() => {
-      next.click();
-    }, 3000);
-
-    // Функція показу активного слайда
-    function showSlider() {
-      // Видалення активного класу зі старого активного слайда
+    // Function to show the active slide
+    const showSlider = () => {
+      // Remove active class from the old active slide
       document
         .querySelector(".slider .list .item.active")
         .classList.remove("active");
@@ -82,23 +94,21 @@ document.addEventListener("DOMContentLoaded", function () {
         .querySelector(".thumbnail .item.active")
         .classList.remove("active");
 
-      // Додавання активного класу до нового активного слайда
+      // Add active class to the new active slide
       items[activeSlideIndex].classList.add("active");
       thumbnails[activeSlideIndex].classList.add("active");
-      //clear auto time run slider
-      clearInterval(refreshInterval);
-      refreshInterval = setInterval(() => {
-        next.click();
-      }, 6000);
-    }
-  }
 
-  // Ініціалізація слайдера при завантаженні сторінки
+      // Update the interval auto-sliding
+      updateInterval();
+    };
+  };
+
+  // Initialize the slider when the page loads
   downloadData(currentLanguage);
 
-  // Обробник події зміни мови
-  let chng = document.getElementById("change-lang");
-  chng.onclick = function () {
+  // Event handler for language change
+  let changeLangButton = document.getElementById("change-lang");
+  changeLangButton.onclick = () => {
     currentLanguage = currentLanguage === "en" ? "uk" : "en";
     downloadData(currentLanguage);
   };
