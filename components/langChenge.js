@@ -9,7 +9,6 @@ let currentLanguage = "english";
 // data
 var data = {
   english: {
-    menuel: ["Portfolio", "About me", "Contact me"],
     titles: ["Slider", "Eatpy", "Flexgym"],
     descriptions: [
       "A dynamic image slider website created using HTML, CSS, and JavaScript, offering seamless navigation through fullscreen images or manual control via image cards. The straightforward setup facilitates easy customization with your own images.",
@@ -18,7 +17,6 @@ var data = {
     ],
   },
   ukraine: {
-    menuel: ["Портфоліо", "Про мене", "Зв'язок"],
     titles: ["Слайдер", "Етапі", "Флекс"],
     descriptions: [
       "Веб-сайт із динамічним слайдером зображень, створений за допомогою HTML, CSS та JavaScript, що пропонує безперервну навігацію через повноекранні зображення або керування за допомогою картинок вручну. Проста установка сприяє легкій настроюваності із використанням ваших власних зображень.",
@@ -43,10 +41,5 @@ function changeContent(language) {
   // update element whith class "description"
   Array.from(descriptions).forEach((description, index) => {
     description.innerText = data[language].descriptions[index];
-  });
-
-  // update element whith class "menuel"
-  Array.from(menuel).forEach((menuel, index) => {
-    menuel.innerText = data[language].menuel[index];
   });
 }
