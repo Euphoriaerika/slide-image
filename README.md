@@ -1,18 +1,20 @@
 # JavaScript Image Slider
 
-This is a simple image slider website that I developed using HTML, CSS, and JavaScript. The project features a header with links for navigation and a language switch button. The main content consists of a fullscreen image that automatically transitions. At the bottom of the screen, there are cards with smaller images, allowing users to manually switch between images. Additionally, two buttons for navigating forward and backward through the images have been implemented.
+This is a simple image slider website that I developed using HTML, CSS, and JavaScript. The website showcases a collection of what I believe are the best Ukrainian games, with descriptions, titles, and genres, and offers language switching functionality. It also features basic image navigation functionality: automatic transitions, navigation through buttons, and manual switching by clicking on images in the thumbnail menu. This website is also responsive and optimized for mobile devices.
 
 ## Usage
 
-To use this project, follow these steps:
+To use this project, you need to:
 
-1. Download or clone the repository.
-2. Add a folder named "images" to the root directory.
-3. Place your images in the "images" folder with the following naming format: "img-<number>.jpg".
+1. Download or clone this repository.
+2. Place your images in the "images" folder in the following format "img-<number>.jpg".
+3. Update the data for the images in the "data-en.json" and "data-uk.json" files.
+
+You can also add your own languages by creating a JSON file with a similar format and adding the two-letter initials to the "currentLanguage" variable options.
 
 ## Screenshots
 
-![Image Slider](./screenshots/slider.jpg)
+![Image Slider](./screenshots/slider.png)
 
 ## Credits
 
