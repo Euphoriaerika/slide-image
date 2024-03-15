@@ -7,57 +7,37 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
   font-family: Poppins, sans-serif;
-  margin: 0;
   background-color: var(--bg-color);
   color: var(--text-color);
-}
-
-a {
-  text-decoration: none;
-  color: var(--text-color);
-  cursor: pointer;
-}
-
-i {
-  font-size: 1.4em;
 }
 
 /* HEADER */
 
 header {
   width: 1200px;
+  height: 40px;
   max-width: 90%;
   margin: auto;
-  display: grid;
-  grid-template-columns: 50px 1fr 50px;
-  grid-template-rows: 40px;
-  justify-content: center;
+
+  display: flex;
+  justify-content: space-between;
   align-items: end;
   position: relative;
   z-index: 100;
 }
 
+header i {
+  cursor: pointer;
+  font-size: 1.4em;
+}
+
 header .logo {
   font-weight: bold;
-}
-
-header .menu {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  font-weight: 500;
-}
-
-#change-lang {
-  display: flex;
-  justify-content: flex-end;
 }
 
 /* Slider */
@@ -72,6 +52,7 @@ header .menu {
   inset: 0 0 0 0;
   overflow: hidden;
   opacity: 0;
+
   transition: 0.5s;
 }
 
@@ -83,20 +64,22 @@ header .menu {
 
 .slider .list .item::after {
   content: "";
+  background-image: linear-gradient(to top, #000 40%, transparent);
   width: 100%;
   height: 100%;
+
   position: absolute;
   left: 0;
   bottom: 0;
-  background-image: linear-gradient(to top, #000 40%, transparent);
 }
 
 .slider .list .item .content {
+  width: 500px;
+  max-width: 80%;
+
   position: absolute;
   left: 10%;
   top: 20%;
-  width: 500px;
-  max-width: 80%;
   z-index: 1;
 }
 
@@ -107,7 +90,6 @@ header .menu {
 
 .slider .list .item .content h2 {
   font-size: 100px;
-  margin: 0;
 }
 
 .slider .list .item.active {
@@ -145,18 +127,22 @@ header .menu {
   position: absolute;
   top: 30%;
   right: 50px;
+
   z-index: 100;
 }
 
 .arrows button {
-  background-color: #eee5;
-  border: none;
   font-family: monospace;
-  width: 40px;
-  height: 40px;
-  border-radius: 5px;
   font-size: x-large;
   color: var(--text-color);
+
+  background-color: #eee5;
+  border: none;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+
+
   transition: 0.5s;
   cursor: pointer;
 }
@@ -169,16 +155,18 @@ header .menu {
 /* Thumbnail */
 
 .thumbnail {
-  position: absolute;
-  bottom: 40px;
-  z-index: 11;
-  display: flex;
-  gap: 10px;
   width: 100%;
   height: 250px;
   padding: 0 50px;
-  overflow: auto;
+
+  display: flex;
   justify-content: end;
+  gap: 10px;
+
+  position: absolute;
+  bottom: 40px;
+  z-index: 11;
+  overflow: auto;
 }
 
 .thumbnail::-webkit-scrollbar {
@@ -188,6 +176,7 @@ header .menu {
 .thumbnail .item {
   width: 150px;
   height: 220px;
+  
   filter: brightness(0.5);
   transition: 0.5s;
   flex-shrink: 0;
@@ -207,7 +196,7 @@ header .menu {
 
 .thumbnail .item .content {
   position: absolute;
-  inset: auto 10px 10px 10px;
+  inset: auto auto 10px 10px;
 }
 
 @media screen and (max-width: 678px) {
@@ -225,9 +214,6 @@ header .menu {
 @media screen and (max-height: 760px) and (max-width: 678px) {
   body {
     font-size: 76%;
-  }
-  .slider .list .item .content {
-    top: 8%;
   }
   .arrows button {
     width: 28px;
